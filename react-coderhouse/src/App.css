@@ -1,0 +1,34 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none !important;
+}
+
+nav{
+  display: flex;
+  justify-content:space-between;
+  padding: 15px;
+}
+
+ul{
+  display: flex;
+  gap: 20px;
+}
+
+a{
+  color: black;
+}
+
+.cart-logo{
+  font-size: 24px;
+}
+.btn-cart{
+  border: none;
+  background-color: transparent;
+}
+
+.saludo{
+  text-align: center;
+}
