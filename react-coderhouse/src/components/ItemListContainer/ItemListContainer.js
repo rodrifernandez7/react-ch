@@ -1,8 +1,8 @@
 import React from "react";
 import "../../App.css";
 import { useEffect, useState } from "react";
-import { getFetch, products } from "../../helpers/getFetch";
-import { Link } from "react-router-dom";
+import { getFetch } from "../../helpers/getFetch";
+import ItemList from "../ItemList/ItemList";
 
 function ItemListContainer({ greeting }) {
   const [items, setItems] = useState([]);
@@ -19,25 +19,8 @@ function ItemListContainer({ greeting }) {
   return (
     <>
       <div className="saludo">{greeting}</div>
-
-      {items.map((item) => (
-        <div key={item.id} className="card-container">
-          <Link to={`/detail/${item.id}`}>
-            <div className="card" style={{width: "18rem"}}>
-              <img src={item.foto} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">{item.name}</h5>
-                <p className="card-text">
-                  ${item.price}
-                </p>
-                <a href="#" className="btn btn-primary">
-                  Añadir al carrito
-                </a>
-              </div>
-            </div>
-          </Link>
-        </div>
-      ))}
+      <ItemList items={items} />
+      {/* items={items} para pasarle a ItemList.js el array que almacenamos en el estado luego de la promesa */}
     </>
   );
 }
