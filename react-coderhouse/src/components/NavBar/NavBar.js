@@ -1,6 +1,7 @@
 import React from "react";
-import "../App.css";
-import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom"
+import "../../App.css";
+import CartWidget from "../CartWidget/CartWidget";
 
 function NavBar() {
   return (
@@ -11,10 +12,10 @@ function NavBar() {
                 RFM
             </div>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Tienda</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li>Tienda</li>
+                <li>Nosotros</li>
+                <li>Contacto</li>
                 <CartWidget />
             </ul>
         </nav>
