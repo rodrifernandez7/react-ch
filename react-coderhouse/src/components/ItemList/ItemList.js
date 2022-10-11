@@ -5,7 +5,7 @@ const ItemList = ({items}) => { //recibo la prop enviada de ItemListContainer.js
   return (
     <div className="card-container">
       {items.map((item) => (
-        <Item item={item}/>
+        <Item item={item} key={item.id}/>
       ))}
     </div>
   );
