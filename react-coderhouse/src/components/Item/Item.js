@@ -5,7 +5,7 @@ import "./Item.css";
 function Item({item}) {
   return (
     <>
-        <Link to={`/detail/${item.id}`}>
+        <Link to={`/item/${item.id}`}>
           <div className="card" style={{ width: "18rem" }}>
             <img src={item.foto} className="card-img-top" alt="..." />
             <div className="card-body">

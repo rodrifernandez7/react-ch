@@ -4,6 +4,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NotFound404 from "./components/NotFound404/NotFound404"
 import NavBar from "./components/NavBar/NavBar";
+import Cart from "./components/Cart/Cart";
 
 //BrowserRouter para poder usar todas las func de react-router-dom
 //path='*' significa que si va a cualquier ruta que no existe.
@@ -18,7 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<ItemListContainer greeting="Bienvenido a RFM KICKS!" />} />
         <Route path="/categoria/:idCategoria" element={<ItemListContainer />} />
-        <Route path="/detail/:idProduct" element={<ItemDetailContainer />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/item/:idProduct" element={<ItemDetailContainer />} />
         <Route path="/404" element={<NotFound404/>} />
         <Route path="*" element={ <Navigate to="/404" /> }/>
       </Routes>

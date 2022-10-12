@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 function CartWidget() {
     return (
         <>
-            <button className="btn-cart"><i className='cart-logo bx bx-cart'></i></button>
+            <Link to="/cart"><button className="btn-cart"><i className='cart-logo bx bx-cart'></i></button></Link>
         </>
     )
 }

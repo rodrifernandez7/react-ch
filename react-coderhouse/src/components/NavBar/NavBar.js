@@ -8,7 +8,7 @@ function NavBar() {
     <>
       <header>
         <nav>
-          <div className="logo">RFM</div>
+          <Link to="/"><div className="logo">RFM</div></Link>
           <ul>
             <li>
               <Link to="/">Home</Link>
