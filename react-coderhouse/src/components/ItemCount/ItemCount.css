@@ -1,0 +1,32 @@
+.quantity-container{
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    vertical-align: top;
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.input-quantity{
+    border: none;
+    font-size: 17px;
+    text-align: center;
+    width: 75px;
+    background: none;
+}
+
+.btn-quantity{
+    cursor: pointer;
+    font-size: 24px;
+    width: 12px;
+    color: #3483fa;
+    line-height: 1;
+}
+
+.reset{
+    background: none;
+    border: 0;
+    width: auto;
+    font-size: 24px;
+    font-family: Proxima Nova, sans-serif;
+}
