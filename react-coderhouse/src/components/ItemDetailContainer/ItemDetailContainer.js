@@ -5,17 +5,15 @@ import { getFetch } from "../../helpers/getFetch";
 
 const ItemDetailContainer = () => {
   const { idProduct } = useParams(); //Hook para recibir los parametros de la ruta. Es de react-router-dom.
-  console.log(idProduct);
+  // console.log(idProduct);
 
   const[products, setProducts] = useState([]); 
-
-  console.log(products);
 
   useEffect(() => {
     getFetch()
       .then((data) => setProducts(data.find((product)=> product.id === idProduct))) //para guardar en el state nada mas el producto que quiero mostrar.
       .catch((err) => console.error(err))
-      .finally(() => console.log("finalizo la promesa."));
+      // .finally(() => console.log("finalizo la promesa."));
   },[]);
 
   return (

@@ -11,9 +11,6 @@ function Item({item}) {
             <div className="card-body">
               <h5 className="card-title">{item.name}</h5>
               <p className="card-text">${item.price}</p>
-              <button className="btn btn-primary">
-                Añadir al carrito
-              </button>
             </div>
           </div>
         </Link>

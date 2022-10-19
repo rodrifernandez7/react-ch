@@ -4,12 +4,20 @@ import { useEffect, useState } from "react";
 import { getFetch } from "../../helpers/getFetch";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+// import { collection, getDocs, getFirestore } from 'firebase/firestore';
 
 function ItemListContainer({ greeting }) {
   const [items, setItems] = useState([]);
 
   const {idCategoria} = useParams(); //capturo el parametro :idCategoria de App.js
-  // console.log(idCategoria);
+
+  // useEffect(() => {
+  //   const db =  getFirestore();
+  //   const queryCollection = collection(db, 'productos')
+  //   getDocs(queryCollection)
+  //   .then(resp => (resp.docs.map(prod => ({ id: prod.id, ...prod.data() }) )))
+  //   .catch(err => console.log(err));
+  // }, [])
 
   useEffect(() => {
     if (idCategoria) { //si idCategoria existe, hago un filter a la respuesta donde filtro el producto.categoria con la categoria que me viene en el parametro de idCategoria.
