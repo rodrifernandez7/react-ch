@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/cartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css'
 
@@ -7,12 +8,16 @@ import './ItemDetail.css'
 
 const ItemDetail = ({ product }) => {
 
-  const [isCount, setIsCount] = useState(true);
+  const { addItem, cartList } = useContext(CartContext);
+
+  const [isCount, setIsCount] = useState(true); //estado seteado en true, para luego ser false y desaparecer el ItemCount.
 
   const onAdd = () => {
     console.log('producto agregado al carrito.');
-    setIsCount(false)
+    addItem({...product}) //sin el spred operator me quedaria un objeto dentro de otro objeto.
+    setIsCount(false) //cambio el estado a false.
 }
+  console.log(cartList);
 
   return (
     <div className="card" style={{width: "18rem"}}>
@@ -23,7 +28,7 @@ const ItemDetail = ({ product }) => {
             
             
           { //para hacer desaparecer ItemCount una vez clickeado el btn 'Agregar al carrito'.
-            isCount ? <div> <ItemCount onAdd={onAdd} stock={product.stock} /> </div>
+            isCount ? <div> <ItemCount onAdd={onAdd} stock={product.stock} /> </div> //con onAdd={onAdd}, al clickear desaparece ItemCount.
             :
             <>
             <Link to='/cart'><button className="btn btn-primary">Finalizar compra</button></Link>
