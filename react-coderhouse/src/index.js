@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import { firestoreInit } from './firebase/config';
 
-firestoreInit()
+firestoreInit();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

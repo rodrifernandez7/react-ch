@@ -4,6 +4,7 @@ import "../../App.css";
 import CartWidget from "../CartWidget/CartWidget";
 
 function NavBar() {
+
   return (
     <>
       <header>

@@ -1,26 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { getFetch } from "../../helpers/getFetch";
+//import { getFetch } from "../../helpers/getFetch";
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
-  const { idProduct } = useParams(); //Hook para recibir los parametros de la ruta. Es de react-router-dom.
-  // console.log(idProduct);
+  const { idProduct } = useParams(); //Hook para recibir los parametros de la ruta. Es de react-router-dom. 
 
-  const[products, setProducts] = useState([]); 
+  const[item, setItem] = useState([]); 
 
   useEffect(() => {
-    getFetch()
-      .then((data) => setProducts(data.find((product)=> product.id === idProduct))) //para guardar en el state nada mas el producto que quiero mostrar.
-      .catch((err) => console.error(err))
-      // .finally(() => console.log("finalizo la promesa."));
-  },[]);
+    const db = getFirestore()
+    const queryDoc = doc(db, 'productos', idProduct)
+    getDoc(queryDoc) //getDoc porque quiero traer UNO solo.
+    .then(resp => setItem({id: resp.id, ...resp.data()})) //al igual que en ItemListContainer.
+    .catch(err => console.log(err));
+  })
+
+  // useEffect(() => {
+  //   getFetch()
+  //     .then((data) => setItem(data.find((product)=> product.id === idProduct))) //para guardar en el state nada mas el producto que quiero mostrar.
+  //     .catch((err) => console.error(err))
+  // });
 
   return (
     <div>
-        <ItemDetail product={products}/>
+        <ItemDetail item={item}/>
     </div>
   );
 };
 
 export default ItemDetailContainer;
+ 
