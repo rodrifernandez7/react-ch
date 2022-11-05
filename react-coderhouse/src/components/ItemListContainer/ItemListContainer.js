@@ -14,7 +14,7 @@ function ItemListContainer({ greeting }) {
     if(idCategoria){
       const db = getFirestore()
       const queryCollection = collection(db, 'productos')
-      const queryFilter = query(queryCollection, where('categoria', '==', idCategoria))
+      const queryFilter = query(queryCollection, where('category', '==', idCategoria))
       getDocs(queryFilter) //es una promesa por lo tanto uso .then
         .then(data => setItems(data.docs.map(prod => ({ id: prod.id, ...prod.data() })))) //para armar el objeto nuevo con toda la info nueva ya que en firestore el id esta x fuera de los datos.
         .catch(err => console.error(err))

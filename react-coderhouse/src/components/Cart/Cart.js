@@ -51,9 +51,6 @@ const Cart = () => {
       [e.target.name]: e.target.value
     })
   }
-
-  console.log(dataForm);
-
   return (  
     <>
       <h5>Carrito:</h5>

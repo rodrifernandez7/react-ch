@@ -8,8 +8,7 @@ const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([]);
 
     const addItem = (item) => { //recibo un producto por parametro.
-        console.log(item); //item traigo de ItemDetail.js ya con la propiedad quant creada.
-        isInCart(item)
+        isInCart(item); //item traigo de ItemDetail.js ya con la propiedad quant creada.
     }
 
     const clearCart = () => {
@@ -33,7 +32,6 @@ const CartContextProvider = ({children}) => {
             //... para mantener todo el contenido de cartList y todo entre [] para que al clickear el boton no me pise y guarde todo en un mismo array.
         }else{
             cartList[index].quant += item.quant //item.quant = es como si agregara otra vez el producto entonces toma el numero de la propiedad quant y se lo suma.
-            console.log(item.quant)
             setCartList([...cartList])
         }
     }
