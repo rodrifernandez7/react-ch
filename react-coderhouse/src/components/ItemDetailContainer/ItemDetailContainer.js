@@ -16,13 +16,7 @@ const ItemDetailContainer = () => {
     .then(resp => setItem({id: resp.id, ...resp.data()})) //al igual que en ItemListContainer.
     .catch(err => console.log(err));
   })
-
-  // useEffect(() => {
-  //   getFetch()
-  //     .then((data) => setItem(data.find((product)=> product.id === idProduct))) //para guardar en el state nada mas el producto que quiero mostrar.
-  //     .catch((err) => console.error(err))
-  // });
-
+  
   return (
     <div>
         <ItemDetail item={item}/>

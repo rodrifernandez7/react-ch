@@ -14,7 +14,6 @@ function NavBar() {
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li>Tienda</li>
             <li className="nav-item dropwdown">
               <div
                 className="nav-link dropdown-toggle"
@@ -52,8 +51,6 @@ function NavBar() {
                 </li>
               </ul>
             </li>
-            <li>Nosotros</li>
-            <li>Contacto</li>
             <CartWidget />
           </ul>
         </nav>

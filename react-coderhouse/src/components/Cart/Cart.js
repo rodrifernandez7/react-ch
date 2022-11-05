@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Cart.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/cartContext";
@@ -40,38 +41,11 @@ const Cart = () => {
     .then(resp => setIsId(resp.id)) //para obtener el id a mostrarle al usuario tras la compra exitosa.
     .catch(err => console.log(err))
     .finally(() => clearCart())
-     
-    //update
-
-    // const orderDoc =  doc(db, 'productos', 'KwXaIFzUPaPtkhaTJtAc')
-    // updateDoc(orderDoc, {
-    //   stock: 10
-    // })
-    // .then(resp => console.log('Producto actualizado.'))
-    // .catch(err => console.log)
-
-    //Opcional stock
-    // const queryCollection = collection(db, 'productos')
-
-    // const queryUpdateStock = await query(
-    //   queryCollection,
-    //   where( documentId(), 'in', cartList.map(item => item.id))
-    // )
-
-    // const batch = writeBatch(db)
-
-    // await getDocs(queryUpdateStock)
-    // .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
-    //   stock: res.data().stock - cartList.find(item => item.id === res.id).quant
-    // })))
   
-    // batch.commit()
-    // console.log('Producto actualizado con stock.');
   }
 
   const handleInputChange = (e) => {
-    // console.log(e.target.value)
-    // console.log(e.target.name);
+
     setDataForm({
       ...dataForm,
       [e.target.name]: e.target.value
@@ -89,14 +63,18 @@ const Cart = () => {
       {cartList.length === 0 ? (
         <div>
           <h3>No hay productos seleccionados</h3>
-          <Link to="/">Volver al inicio</Link>
+          <Link to="/" className="btn-backhome">Volver al inicio</Link>
         </div>
       ) : (
         <>
           <ul>
             {cartList.map((product) => (
               <li key={product.id}>
-                Nombre: {product.name} Precio: ${product.price} Cantidad:{product.quant} {/* quant es la propiedad creada en itemdetail.js */}
+              Nombre: {product.name} 
+              <br />
+              Precio: ${product.price}
+              <br />
+              Cantidad:{product.quant} {/* quant es la propiedad creada en itemdetail.js */}
                 <button onClick={() => removeItem(product.id)}>X</button>
                 {/*para agregar un parametro tengo que codearlo asi.*/}
               </li>

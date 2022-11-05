@@ -27,18 +27,6 @@ function ItemListContainer({ greeting }) {
     }
   }, [idCategoria])
 
-  //useEffect(() => {
-   // if (idCategoria) { //si idCategoria existe, hago un filter a la respuesta donde filtro el producto.categoria con la categoria que me viene en el parametro de idCategoria.
-    //   getFetch()
-    //   .then((data) => setItems(data.filter((producto)=> producto.categoria === idCategoria))) //para guardar la respuesta(data) en el state.
-    //   .catch((err) => console.error(err))
-    // } else {
-    //   getFetch()
-      //.then((data) => setItems(data)) //para guardar la respuesta(data) en el state.
-  //     .catch((err) => console.error(err))
-  //   }
-  // }, [idCategoria]);
-
   return (
     <>
       <div className="saludo">{greeting}</div>
