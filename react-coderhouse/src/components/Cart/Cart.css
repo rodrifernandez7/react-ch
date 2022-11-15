@@ -1,3 +1,19 @@
-.btn-backhome{
-    
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+form input{
+    margin-top: 12px;
+    width: 25%;
+}
+
+.btn-buy{
+    margin-top: 20px;
+    width: 15%;
+}
+
+.btn-clean{
+    margin-top: 20px;
 }

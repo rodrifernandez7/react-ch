@@ -23,7 +23,7 @@ const ItemCount = ({onAdd, stock}) => {
 
     return (
         <>
-        <div className="quantity-container">
+        <div className="quantity-container" >
             <input onClick={subtractQuant} data-quantity="pop" type="submit" value="-" className="btn-quantity reset" name="pop" />
             
             <input autoComplete="off" data-quantity="input" type="tel" className="input-quantity" value={quantity} name="quantity" disabled />
@@ -32,7 +32,7 @@ const ItemCount = ({onAdd, stock}) => {
         
         </div>
 
-        <button onClick={handleOnAdd} className="btn btn-primary">Añadir al carrito</button>
+        <button onClick={handleOnAdd} className="btn btn-primary" style={{ fontSize: "15px" }}>Añadir al carrito</button>
         </>
     )
 }

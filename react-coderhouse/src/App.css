@@ -1,24 +1,10 @@
-nav{
-  display: flex;
-  justify-content:space-between;
-  padding: 15px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-ul{
-  display: flex;
-  gap: 20px;
-}
-
-a{
-  color: black;
-}
-
-.cart-logo{
-  font-size: 24px;
-}
-.btn-cart{
-  border: none;
-  background-color: transparent;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 .saludo{

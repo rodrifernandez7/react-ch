@@ -53,17 +53,18 @@ const Cart = () => {
   }
   return (  
     <>
-      <h5>Carrito:</h5>
+      <h5 style={{ marginLeft: "20px" }}>Carrito:</h5>
 
       { isId && <h3>Orden generada con exito: {isId}</h3> }
 
       {cartList.length === 0 ? (
-        <div>
+        <div style={{ marginLeft: "20px" }}>
           <h3>No hay productos seleccionados</h3>
           <Link to="/" className="btn-backhome">Volver al inicio</Link>
         </div>
       ) : (
         <>
+          <div style={{ marginLeft: "20px" }}>
           <ul>
             {cartList.map((product) => (
               <li key={product.id}>
@@ -80,16 +81,18 @@ const Cart = () => {
 
           <div>Precio total: ${totalPrice()}</div>
 
-          <form onSubmit={checkout}>
+          <button onClick={clearCart} className="btn-clean">Vaciar carrito</button>
+
+          <form onSubmit={checkout} className="form">
             <input type="text" placeholder="Nombre" name="name" value={dataForm.name} onChange={handleInputChange} />
             <input type="text" placeholder="Apellido" name="surname" value={dataForm.surname} onChange={handleInputChange} />
             <input type="email" placeholder="Correo electronico" name="email" value={dataForm.email} onChange={handleInputChange} />
-            <input type="number" placeholder="Telefono" name="phone" value={dataForm.phone} onChange={handleInputChange} />
+            <input type="tel" placeholder="Telefono" name="phone" value={dataForm.phone} onChange={handleInputChange} />
           
-            <button type="submit"> Comprar</button>
+            <button type="submit" className="btn-buy"> Comprar</button>
           </form>
 
-          <button onClick={clearCart}>Vaciar carrito</button>
+          </div>
         </>
       )}
     </>

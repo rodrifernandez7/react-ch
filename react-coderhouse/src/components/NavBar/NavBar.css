@@ -1,0 +1,31 @@
+nav{
+    display: flex;
+    justify-content:space-between;
+    padding: 15px;
+    font-size: 14px;
+  }
+  
+  ul{
+    display: flex;
+    gap: 20px;
+  }
+
+  li{
+    font-size: 14px;
+  }
+  
+  a{
+    color: black;
+  }
+  
+  .cart-logo{
+    font-size: 24px;
+  }
+  .btn-cart{
+    border: none;
+    background-color: transparent;
+  }
+
+  .logo{
+    font-size: 20px;
+  }
